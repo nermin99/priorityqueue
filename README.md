@@ -29,7 +29,18 @@ pq.enqueue(1, 30)
 pq.enqueue(2, 10)
 pq.enqueue('x,y', 20)
 
-pq.dequeue() // { key: 2, priority: 10 }
-pq.front()   // { key: 'x,y', priority: 20 }
-pq.rear()    // { key: 1, priority: 30 }
+pq.dequeue()  // { key: 2, priority: 10 }
+pq.front()    // { key: 'x,y', priority: 20 }
+pq.rear()     // { key: 1, priority: 30 }
 ```
+
+## API
+
+- enqueue()
+- dequeue()
+- front()
+- rear()
+- isEmpty()
+- entries()
+- keys()
+- priorities()

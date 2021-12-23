@@ -1,6 +1,11 @@
 // https://www.geeksforgeeks.org/implementation-priority-queue-javascript/
 
+export type qElementType = {
+  key: number | string
+  priority: number
+}
 export class PriorityQueue {
+  items: qElementType[]
   // An array is used to implement priority
   constructor() {
     this.items = []
@@ -11,8 +16,8 @@ export class PriorityQueue {
    * @param {number | string} key
    * @param {number} priority The lower the value, the higher the priority.
    */
-  enqueue(key, priority) {
-    const qElement = { key, priority }
+  enqueue(key: number | string, priority: number) {
+    const qElement: qElementType = { key, priority }
     let inserted = false
 
     // iterate through the items array and insert the element at the
@@ -36,7 +41,7 @@ export class PriorityQueue {
    * @returns \{key, priority}
    */
   dequeue() {
-    if (this.isEmpty()) return 'Underflow, no elements in Queue.'
+    if (this.isEmpty()) throw Error('Underflow, no elements in Queue.')
     return this.items.shift()
   }
 
@@ -45,7 +50,7 @@ export class PriorityQueue {
    * @returns \{key, priority}
    */
   front() {
-    if (this.isEmpty()) return 'No elements in Queue.'
+    if (this.isEmpty()) throw Error('No elements in Queue.')
     return this.items[0]
   }
 
@@ -54,7 +59,7 @@ export class PriorityQueue {
    * @returns \{key, priority}
    */
   rear() {
-    if (this.isEmpty()) return 'No elements in Queue.'
+    if (this.isEmpty()) throw Error('No elements in Queue.')
     return this.items[this.items.length - 1]
   }
 

@@ -4,25 +4,25 @@ Focused on accessibility rather than performance.
 
 ## Installation
 
-```
+```sh
 npm i @nermin99/priorityqueue
 ```
 
 ## Import
 
-```
+```js
 import { PriorityQueue } from '@nermin99/priorityqueue'
 ```
 
 or
 
-```
+```js
 const { PriorityQueue } = require('@nermin99/priorityqueue')
 ```
 
 ## Basic Usage
 
-```
+```js
 const pq = new PriorityQueue()
 
 pq.enqueue(1, 30)

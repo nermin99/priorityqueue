@@ -66,9 +66,23 @@ export class PriorityQueue {
   }
 
   /**
-   * Prints all the keys in the queue in highest priority order.
+   * Returns an array of the queue key/priority-pairs ordered by priority.
    */
-  print() {
-    return this.items.map(({ key }) => key).join(', ')
+  entries() {
+    return this.items
+  }
+
+  /**
+   * Returns an array of the queue keys ordered by priority.
+   */
+  keys() {
+    return this.items.map(({ key }) => key)
+  }
+
+  /**
+   * Returns an array of the queue priorities ordered by priority.
+   */
+  priorities() {
+    return this.items.map(({ priority }) => priority)
   }
 }

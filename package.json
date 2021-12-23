@@ -1,7 +1,6 @@
 {
   "name": "@nermin99/priorityqueue",
   "version": "1.0.6",
-  "homepage": "https://github.com/nermin99/priorityqueue",
   "description": "A simple and lightweight priority queue",
   "author": "Nermin Skenderovic",
   "license": "ISC",
@@ -10,6 +9,11 @@
     "priority",
     "queue"
   ],
+  "homepage": "https://github.com/nermin99/priorityqueue",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nermin99/priorityqueue"
+  },
   "main": "dist/cjs/index.js",
   "module": "dist/mjs/index.js",
   "exports": {

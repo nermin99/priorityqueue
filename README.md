@@ -1,6 +1,8 @@
-A very simple and lightweight Priority Queue, based on [this article](https://www.geeksforgeeks.org/implementation-priority-queue-javascript/).
+A very simple and lightweight Javascript Priority Queue, based on [this article](https://www.geeksforgeeks.org/implementation-priority-queue-javascript/).
 
 Focused on accessibility rather than performance.
+
+Works with both ES Modules and CommonJS.
 
 ## Installation
 

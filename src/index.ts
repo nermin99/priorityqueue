@@ -1,9 +1,10 @@
 // https://www.geeksforgeeks.org/implementation-priority-queue-javascript/
 
-export type qElementType = {
+interface qElementType {
   key: number | string
   priority: number
 }
+
 export class PriorityQueue {
   items: qElementType[]
   // An array is used to implement priority

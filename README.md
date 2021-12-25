@@ -38,17 +38,17 @@ pq.rear() // { key: 1, priority: 30 }
 
 ## API Reference
 
-- [enqueue(key, priority)](#enqueuekey-priority)
-- [dequeue()](#dequeue)
-- [updatePriority(key, newPriority)](#updateprioritykey-newpriority)
-- [front()](#front)
-- [rear()](#rear)
-- [isEmpty()](#isempty)
-- [entries()](#entries)
-- [keys()](#keys)
-- [priorities()](#priorities)
+- [.enqueue(key, priority)](#enqueuekey-priority)
+- [.dequeue()](#dequeue)
+- [.updatePriority(key, newPriority)](#updateprioritykey-newpriority)
+- [.front()](#front)
+- [.rear()](#rear)
+- [.isEmpty()](#isempty)
+- [.entries()](#entries)
+- [.keys()](#keys)
+- [.priorities()](#priorities)
 
-### enqueue(key, priority)
+### .enqueue(key, priority)
 
 Adds an element with a given key and priority to the queue.
 
@@ -59,7 +59,7 @@ pq.enqueue('x,y', 10)
 pq // [{key: 'x,y', priority: 10}, {key: 1, priority: 20}]
 ```
 
-### dequeue()
+### .dequeue()
 
 Removes the _highest_ priority element from the queue and returns it.
 
@@ -71,7 +71,7 @@ const element = pq.dequeue()
 element // {key: 'x,y', priority: 10}
 ```
 
-### updatePriority(key, newPriority)
+### .updatePriority(key, newPriority)
 
 Updates the priority of an existing element in the queue.
 
@@ -83,7 +83,7 @@ pq.updatePriority(1, 5)
 pq // [{key: 1, priority: 5}, {key: 'x,y', priority: 10}]
 ```
 
-### front()
+### .front()
 
 Returns the _highest_ priority element in the queue without removing it.
 
@@ -95,7 +95,7 @@ pq.front() // {key: 'x,y', priority: 10}
 pq // [{key: 'x,y', priority: 10}, {key: 1, priority: 20}]
 ```
 
-### rear()
+### .rear()
 
 Returns the _lowest_ priority element in the queue without removing it.
 
@@ -107,7 +107,7 @@ pq.rear() // {key: 1, priority: 20}
 pq // [{key: 'x,y', priority: 10}, {key: 1, priority: 20}]
 ```
 
-### isEmpty()
+### .isEmpty()
 
 Returns true if the queue is empty.
 
@@ -118,7 +118,7 @@ pq.dequeue()
 pq.isEmpty() // true
 ```
 
-### entries()
+### .entries()
 
 Returns an array of the queue key/priority-pairs ordered by priority.
 
@@ -129,7 +129,7 @@ pq.enqueue('x,y', 10)
 pq.entries() // [{key: 'x,y', priority: 10}, {key: 1, priority: 20}]
 ```
 
-### keys()
+### .keys()
 
 Returns an array of the queue keys ordered by priority.
 
@@ -140,7 +140,7 @@ pq.enqueue('x,y', 10)
 pq.keys() // ['x,y', 1]
 ```
 
-### priorities()
+### .priorities()
 
 Returns an array of the queue priorities ordered by priority.
 

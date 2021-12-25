@@ -55,6 +55,21 @@ export class PriorityQueue {
   }
 
   /**
+   * Updates the priority of an existing element in the queue.
+   * @param {number | string} key The key of an existing element.
+   * @param {number} newPriority The lower the value, the higher the priority.
+   * @returns `true`, if succesfull.
+   */
+  updatePriority(key: number | string, newPriority: number) {
+    const idx = this.items.findIndex((element) => element.key === key)
+    if (idx === -1) throw Error('There is no element with this key in the queue.')
+
+    this.items[idx] = { key, priority: newPriority }
+    this.items = this.items.sort((a, b) => a.priority - b.priority)
+    return true
+  }
+
+  /**
    * Returns the *highest* priority element in the queue without removing it.
    * @returns \{key, priority}
    */

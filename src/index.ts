@@ -7,9 +7,11 @@ interface qElementType {
 
 export class PriorityQueue {
   items: qElementType[]
-  // An array is used to implement priority
+  keySet: Set<Object>
+
   constructor() {
-    this.items = []
+    this.items = [] // An array is used to implement priority
+    this.keySet = new Set()
   }
 
   /**
@@ -19,10 +21,14 @@ export class PriorityQueue {
    */
   enqueue(key: number | string, priority: number) {
     const qElement: qElementType = { key, priority }
-    let inserted = false
+
+    if (this.keySet.has(key))
+      throw Error('An element with this key already exists in the queue.')
+    this.keySet.add(key)
 
     // iterate through the items array and insert the element at the
     // correct position of the queue
+    let inserted = false
     for (let i = 0; i < this.items.length; i++) {
       if (this.items[i].priority > qElement.priority) {
         this.items.splice(i, 0, qElement)
@@ -42,8 +48,10 @@ export class PriorityQueue {
    * @returns \{key, priority}
    */
   dequeue() {
-    if (this.isEmpty()) throw Error('Underflow, no elements in Queue.')
-    return this.items.shift()
+    if (this.isEmpty()) throw Error('Underflow, no elements in the queue.')
+    const element = this.items.shift()!
+    this.keySet.delete(element.key)
+    return element
   }
 
   /**
@@ -51,7 +59,7 @@ export class PriorityQueue {
    * @returns \{key, priority}
    */
   front() {
-    if (this.isEmpty()) throw Error('No elements in Queue.')
+    if (this.isEmpty()) throw Error('No elements in the queue.')
     return this.items[0]
   }
 
@@ -60,7 +68,7 @@ export class PriorityQueue {
    * @returns \{key, priority}
    */
   rear() {
-    if (this.isEmpty()) throw Error('No elements in Queue.')
+    if (this.isEmpty()) throw Error('No elements in the queue.')
     return this.items[this.items.length - 1]
   }
 

@@ -40,6 +40,7 @@ pq.rear()     // { key: 1, priority: 30 }
 
 - enqueue()
 - dequeue()
+- updatePriority()
 - front()
 - rear()
 - isEmpty()

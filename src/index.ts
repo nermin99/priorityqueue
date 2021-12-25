@@ -7,11 +7,11 @@ interface qElementType {
 
 export class PriorityQueue {
   items: qElementType[]
-  keySet: Set<Object>
+  #keySet: Set<Object>
 
   constructor() {
     this.items = [] // An array is used to implement priority
-    this.keySet = new Set()
+    this.#keySet = new Set()
   }
 
   /**
@@ -22,9 +22,9 @@ export class PriorityQueue {
   enqueue(key: number | string, priority: number) {
     const qElement: qElementType = { key, priority }
 
-    if (this.keySet.has(key))
+    if (this.#keySet.has(key))
       throw Error('An element with this key already exists in the queue.')
-    this.keySet.add(key)
+    this.#keySet.add(key)
 
     // iterate through the items array and insert the element at the
     // correct position of the queue
@@ -50,7 +50,7 @@ export class PriorityQueue {
   dequeue() {
     if (this.isEmpty()) throw Error('Underflow, no elements in the queue.')
     const element = this.items.shift()!
-    this.keySet.delete(element.key)
+    this.#keySet.delete(element.key)
     return element
   }
 

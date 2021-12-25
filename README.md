@@ -38,15 +38,15 @@ pq.rear() // { key: 1, priority: 30 }
 
 ## API Reference
 
-- [enqueue(key, priority)](#enqueue-key--priority-)
-- [dequeue()](#dequeue--)
-- [updatePriority(key, newPriority)](#updatepriority-key--newpriority-)
-- [front()](#front--)
-- [rear()](#rear--)
-- [isEmpty()](#isempty--)
-- [entries()](#entries--)
-- [keys()](#keys--)
-- [priorities()](#priorities--)
+- [enqueue(key, priority)](#enqueuekey-priority)
+- [dequeue()](#dequeue)
+- [updatePriority(key, newPriority)](#updateprioritykey-newpriority)
+- [front()](#front)
+- [rear()](#rear)
+- [isEmpty()](#isempty)
+- [entries()](#entries)
+- [keys()](#keys)
+- [priorities()](#priorities)
 
 ### enqueue(key, priority)
 

@@ -150,3 +150,7 @@ pq.enqueue('x,y', 10)
 
 pq.entries() // [10, 20]
 ```
+
+---
+
+## [How to Create a Hybrid NPM Module for ESM and CommonJS](https://www.sensedeep.com/blog/posts/2021/how-to-create-single-source-npm-module.html)
